@@ -1,0 +1,29 @@
+[plugin]
+# OPTIONAL: Default is the name of the directory
+name = "eramba"
+
+[plugin.build]
+type = "docker-compose"
+# OPTIONAL: Default is the name of the directory
+path = "eramba"
+# Not optional
+port = 8443
+# OPTIONAL: Default is Dockerfile
+docker_compose_path = "docker-compose.simple-install.yml"
+
+[plugin.environment]
+DB_HOST="mysql"
+DB_DATABASE="docker"
+DB_USERNAME="docker"
+DB_PASSWORD="docker-eramba-db-password"
+CACHE_URL="Redis://?server=redis&port=6379&password=&timeout=3"
+MYSQL_ROOT_PASSWORD="docker-eramba-mysql-root-password"
+USE_PROXY="0"
+PROXY_HOST=""
+PROXY_PORT=""
+USE_PROXY_AUTH="0"
+PROXY_AUTH_USER=""
+PROXY_AUTH_PASS=""
+PUBLIC_ADDRESS="https://localhost:8443"
+DOCKER_DEPLOYMENT="1"
+LDAPTLS_REQCERT="never"
